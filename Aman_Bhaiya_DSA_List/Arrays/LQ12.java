@@ -22,4 +22,33 @@ public class LQ12 {
 
         return minmax;
     }
+
+    //method 2
+    Pair getMinMax2(int arr[],int left, int right){
+        Pair minmax = new Pair();
+        Pair mmleft = new Pair();
+        Pair mmright = new Pair();
+        int mid;
+
+        if(left == right){
+            minmax.min = arr[0];
+            minmax.max = arr[0];
+            return minmax;
+        }
+
+        if(left+1 == right){
+            minmax.min = Math.min(arr[0], arr[1]);
+            minmax.max = Math.max(arr[0], arr[1]);
+            return minmax;
+        }
+
+        mid = (left + right)/ 2;
+        mmleft = getMinMax2(arr, left, mid);
+        mmright = getMinMax2(arr, mid+1, right);
+
+        minmax.max = Math.max(mmleft.max,mmright.max);
+        minmax.min = Math.min(mmleft.min,mmright.min);
+
+        return minmax;
+    }
 }
