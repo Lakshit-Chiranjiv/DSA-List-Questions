@@ -51,4 +51,28 @@ public class LQ12 {
 
         return minmax;
     }
+
+    //method 3
+    Pair getMinMax3(int arr[],int n){
+        Pair minmax = new Pair();
+        int p;
+
+        if(n%2 == 0){
+            p = 2;
+            minmax.max = Math.max(arr[0],arr[1]);
+            minmax.min = Math.min(arr[0],arr[1]);
+        }
+        else{
+            p = 1;
+            minmax.max = arr[0];
+            minmax.min = arr[0];
+        }
+
+        for(int i = p; i < n-1; i++){
+            minmax.max = arr[i] > arr[i+1] ? Math.max(arr[i], minmax.max) : Math.max(arr[i+1], minmax.max);
+            minmax.max = arr[i] < arr[i+1] ? Math.min(arr[i], minmax.min) : Math.min(arr[i+1], minmax.min);
+        }
+
+        return minmax;
+    }
 }
