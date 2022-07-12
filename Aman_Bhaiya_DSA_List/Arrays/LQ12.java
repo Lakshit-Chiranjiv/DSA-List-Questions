@@ -1,7 +1,8 @@
 package Aman_Bhaiya_DSA_List.Arrays;
 
+
 public class LQ12 {
-    private class Pair{
+    class Pair{
         int min;
         int max;
     }
@@ -13,7 +14,11 @@ public class LQ12 {
         if(n == 1){
             minmax.min = arr[0];
             minmax.max = arr[0];
+            return minmax;
         }
+        
+        minmax.min = arr[0];
+        minmax.max = arr[0];
 
         for(int i = 0;i < n;i++){
             minmax.max = Math.max(minmax.max, arr[i]);
@@ -31,14 +36,14 @@ public class LQ12 {
         int mid;
 
         if(left == right){
-            minmax.min = arr[0];
-            minmax.max = arr[0];
+            minmax.min = arr[left];
+            minmax.max = arr[left];
             return minmax;
         }
 
         if(left+1 == right){
-            minmax.min = Math.min(arr[0], arr[1]);
-            minmax.max = Math.max(arr[0], arr[1]);
+            minmax.min = Math.min(arr[left], arr[right]);
+            minmax.max = Math.max(arr[left], arr[right]);
             return minmax;
         }
 
@@ -68,11 +73,20 @@ public class LQ12 {
             minmax.min = arr[0];
         }
 
-        for(int i = p; i < n-1; i++){
+        for(int i = p; i < (n-1); i+=2){
             minmax.max = arr[i] > arr[i+1] ? Math.max(arr[i], minmax.max) : Math.max(arr[i+1], minmax.max);
-            minmax.max = arr[i] < arr[i+1] ? Math.min(arr[i], minmax.min) : Math.min(arr[i+1], minmax.min);
+            minmax.min = arr[i] < arr[i+1] ? Math.min(arr[i], minmax.min) : Math.min(arr[i+1], minmax.min);
         }
 
         return minmax;
     }
+
+    public static void main(String[] args) {
+        LQ12 ob = new LQ12();
+        int[] arr = {23,14,14,16,53,242,52,56,252,42,53,2,55,21};
+        Pair ans = ob.getMinMax(arr, arr.length);
+        System.out.println(ans.min);
+        System.out.println(ans.max);
+    }
+
 }
