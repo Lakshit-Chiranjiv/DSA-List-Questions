@@ -16,3 +16,11 @@
 ### *Maximum-Subarray - LQ14*
 
 - Initialized max and currentMax with the first element. Traversed from the 2nd element and continuosly checking if adding the next element to currentMax increases it or not. If it increases it then we add that to currentMax else we just assign the value of current element to currentMax. Along with it we keep updating max by comparing if its greater than currentMax. Finally we return the max.
+
+
+### *Contains Duplicate - LQ15*
+
+- Traversing and keeping all elements in a map until some element's count goes 2 or array ends.
+- Adding the elements in a set and checking whether its already in the set before adding.
+
+
