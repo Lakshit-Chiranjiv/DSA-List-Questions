@@ -11,3 +11,8 @@
 
 - Keeping two pointers at start and end and keep swapping them and moving the pointer towards each other until they cross each other.
 - Again swapping through pointers but using recursion by passing the pointers index at each call.
+  
+
+### *Maximum-Subarray - LQ14*
+
+- Initialized max and currentMax with the first element. Traversed from the 2nd element and continuosly checking if adding the next element to currentMax increases it or not. If it increases it then we add that to currentMax else we just assign the value of current element to currentMax. Along with it we keep updating max by comparing if its greater than currentMax. Finally we return the max.
