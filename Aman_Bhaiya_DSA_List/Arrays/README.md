@@ -27,3 +27,8 @@
 ### *Chocolate Distribution Problem - LQ16*
 
 - Sort the array. Then take two pointers pointing at the ends of a window of size m. Keep on comparing for all such windows ,the one with the minimum difference between both its ends is the answer.
+
+
+### *Search in Rotated Sorted Array - LQ17*
+
+- As the array is sorted in ascending order and then rotated then we can conclude that the whole array is a combo of two ascending order arrays merged together. So first we find the break point where the 1st sorted array ends and 2nd starts. Then we apply binary search in both the arrays to get the required number.
