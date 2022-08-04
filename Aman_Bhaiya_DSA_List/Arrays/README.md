@@ -32,3 +32,16 @@
 ### *Search in Rotated Sorted Array - LQ17*
 
 - As the array is sorted in ascending order and then rotated then we can conclude that the whole array is a combo of two ascending order arrays merged together. So first we find the break point where the 1st sorted array ends and 2nd starts. Then we apply binary search in both the arrays to get the required number.
+
+
+### *Next Permutation - LQ18*
+
+- Every permutation array will have 2 parts. Its like a pyramid. The left climb will go to a certain point and then there will be the right fall. So first we will find the 1st breakpoint at the left climb where the a[i+1] > a[i]. That is we store at `ind1` i.e. index 1 in the given example. Then we traverse the array from right and we will find the 1st number which is greater than the number at our stored index i.e. 3. So the number we find in the right half will be 4.Store that index in another variable say `ind2`.Then swap the numbers at both the stored index. Then for getting the next permutation we will reverse the right fall. As it will be give the smallest possible of the right half, we will get our answer. A corner case is that we get complete right fall and no left climb like 54321. In that case we won't do the search and swapping, we will simply reverse the fall i.e. the whole array and that will get us the 1st permutation which will be the answer.
+
+[Striver video link](https://youtu.be/LuLCLgMElus) 
+```
+13542 -> 14235
+        5
+    3       4
+1               2
+```
