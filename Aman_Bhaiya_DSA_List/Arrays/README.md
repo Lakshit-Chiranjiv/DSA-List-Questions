@@ -24,3 +24,6 @@
 - Adding the elements in a set and checking whether its already in the set before adding.
 
 
+### *Chocolate Distribution Problem - LQ16*
+
+- Sort the array. Then take two pointers pointing at the ends of a window of size m. Keep on comparing for all such windows ,the one with the minimum difference between both its ends is the answer.
