@@ -45,3 +45,9 @@
     3       4
 1               2
 ```
+
+
+### *Best time to Buy and Sell Stock - LQ19*
+
+- We create an extra array and traverse the actual array from right and store the maximum found value till that index in the extra array.Then create `maxProfit` variable initialized with zero and then traverse the actual array from beginning and in each iteration find the difference between max stored value uptill that index stored in the extra array and keep storing the max difference in the `maxProfit` variable and after whole traversal it will contain the maximum profit. Time=O(n) Space=O(n)
+- In this approach we create two variables `minSoFar` and `maxProfit`. We will traverse the array and will keep updating the `minSoFar` with the minimum value found and then in the same iteration we will subtract `minSoFar` with the current element and then store the max of the difference and `maxProfit` in `maxProfit`.The intuition behind this is that the max profit will come when we buy the least valued stock and sell it with the maximum valued stock in future. Time=O(n) Space=O(1)
