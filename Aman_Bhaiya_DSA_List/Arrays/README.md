@@ -57,3 +57,15 @@
 ### *Repeat and Missing Number Array - LQ20*
 
 - We create an empty set, then we traverse the array while checking if that number is already in set or not. If it is then we store that number as the repeating number and if it is not then we add it to the set. Then we traverse the array again and check if the number is present in the set or not. If it is not then we store that number as the missing number. Time=O(n) Space=O(n)
+
+
+
+### *Kth Largest Element in an Array - LQ21*
+
+- We sort the array and access the kth element from the end. Time=O(nlogn) Space=O(1)
+- We create a partition function which will return the index of the pivot element after partitioning the array. We will call this function in while loop until left pointer has not crossed the right pointer. In each iteration we will check if the pivot index is equal to k-1 or not. If it is then we return the element at that index. If it is greater than k-1 then we will call the function again with the left pointer as the left pointer and right pointer as the pivot index-1. If it is less than k-1 then we will call the function again with the left pointer as the pivot index+1 and right pointer as the right pointer. Time=O(n) Space=O(1)
+The partition function will work as follows:
+  - We will take the last element as the pivot element.
+  - Initialize a variable `i` with the left pointer.
+  - Traverse the array from left to right and if the current element is less than the pivot element then we will swap the element at `i` with the current element and increment `i` by 1.
+  - After the loop we will swap the element at `i` with the pivot element and return `i`.
