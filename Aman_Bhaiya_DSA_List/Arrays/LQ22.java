@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Solution {
+public class LQ22 {
     public int trap(int[] height) {
         int n = height.length;
         ArrayList<Integer> left = new ArrayList<>();
