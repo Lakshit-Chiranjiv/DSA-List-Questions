@@ -76,3 +76,10 @@ The partition function will work as follows:
 
 - We will create two arrays `leftMax` and `rightMax` of size n. We will traverse the array from left to right and store the maximum value found till that index in the `leftMax` array. Then we will traverse the array from right to left and store the maximum value found till that index in the `rightMax` array. Then we will traverse the array again and for each index we will find the minimum of the `leftMax` and `rightMax` at that index and subtract the current element from it and add it to the `ans` variable. Time=O(n) Space=O(n)
 The intuition behind this is that the water trapped at any index will be the minimum of the maximum height of the left and right side of that index minus the height of the current index. So we will find the maximum height of the left and right side of each index and then find the minimum of them and subtract the current index height from it and add it to the answer.
+
+
+
+# *Product of Array Except Self - LQ23*
+
+- We will create two arrays `leftProduct` and `rightProduct` of size n. We will traverse the array from left to right and store the product of all the elements found till that index in the `leftProduct` array. Then we will traverse the array from right to left and store the product of all the elements found till that index in the `rightProduct` array. Then we will traverse the array again and for each index we will find the product of the `leftProduct` and `rightProduct` at that index and store it in the `ans` array. Time=O(n) Space=O(n)
+- We will store the left cumulative product in the `ans` array itself. Then we will traverse the array from right to left and will keep updating the right cumulative product in a variable. Then we will traverse the array again and for each index we will find the product of the `ans` and the right cumulative product and store it in the `ans` array. Time=O(n) Space=O(1)
