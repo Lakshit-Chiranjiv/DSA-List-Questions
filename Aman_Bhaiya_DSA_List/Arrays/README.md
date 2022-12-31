@@ -69,3 +69,10 @@ The partition function will work as follows:
   - Initialize a variable `i` with the left pointer.
   - Traverse the array from left to right and if the current element is less than the pivot element then we will swap the element at `i` with the current element and increment `i` by 1.
   - After the loop we will swap the element at `i` with the pivot element and return `i`.
+
+
+
+### *Trapping Rain Water - LQ22*
+
+- We will create two arrays `leftMax` and `rightMax` of size n. We will traverse the array from left to right and store the maximum value found till that index in the `leftMax` array. Then we will traverse the array from right to left and store the maximum value found till that index in the `rightMax` array. Then we will traverse the array again and for each index we will find the minimum of the `leftMax` and `rightMax` at that index and subtract the current element from it and add it to the `ans` variable. Time=O(n) Space=O(n)
+The intuition behind this is that the water trapped at any index will be the minimum of the maximum height of the left and right side of that index minus the height of the current index. So we will find the maximum height of the left and right side of each index and then find the minimum of them and subtract the current index height from it and add it to the answer.
