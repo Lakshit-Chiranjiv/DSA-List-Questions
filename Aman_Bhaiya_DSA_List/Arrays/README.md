@@ -89,3 +89,10 @@ The intuition behind this is that the water trapped at any index will be the min
 # *Maximum Product Subarray - LQ24*
 
 - We will create two variables `maxProduct` and `minProduct` and initialize them with the first element of the array. Then we will traverse the array from 1 to n and in each iteration we will find the maximum of the current element, the product of the current element and the `maxProduct` and the product of the current element and the `minProduct`. We will store this maximum in the `maxProduct` variable. Then we will find the minimum of the current element, the product of the current element and the `maxProduct` and the product of the current element and the `minProduct`. We will store this minimum in the `minProduct` variable. Then we will find the maximum of the `maxProduct` and the `ans` and store it in the `ans` variable. Before updating min and max, we will check if the current iterating element is negative, if it is then we will swap the `maxProduct` and `minProduct` variables. Time=O(n) Space=O(1)
+
+
+
+# *Find Minimum in Rotated Sorted Array - LQ25*
+
+- We will traverse the array until we find an element which is less than the previous element. Then we will return that element. Time=O(n) Space=O(1)
+- We will make two pointer `left` and `right` and initialize them with 0 and n-1 respectively. Then we will traverse the array until the left pointer is less than the right pointer. In each iteration we will find the mid element and check if the mid element is less than the previous element and if it is then we will return the mid element. If the mid element is greater than the right element then we will update the left pointer to mid+1. If the mid element is less than the right element then we will update the right pointer to mid-1. Time=O(logn) Space=O(1)
