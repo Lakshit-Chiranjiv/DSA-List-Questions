@@ -83,3 +83,9 @@ The intuition behind this is that the water trapped at any index will be the min
 
 - We will create two arrays `leftProduct` and `rightProduct` of size n. We will traverse the array from left to right and store the product of all the elements found till that index in the `leftProduct` array. Then we will traverse the array from right to left and store the product of all the elements found till that index in the `rightProduct` array. Then we will traverse the array again and for each index we will find the product of the `leftProduct` and `rightProduct` at that index and store it in the `ans` array. Time=O(n) Space=O(n)
 - We will store the left cumulative product in the `ans` array itself. Then we will traverse the array from right to left and will keep updating the right cumulative product in a variable. Then we will traverse the array again and for each index we will find the product of the `ans` and the right cumulative product and store it in the `ans` array. Time=O(n) Space=O(1)
+
+
+
+# *Maximum Product Subarray - LQ24*
+
+- We will create two variables `maxProduct` and `minProduct` and initialize them with the first element of the array. Then we will traverse the array from 1 to n and in each iteration we will find the maximum of the current element, the product of the current element and the `maxProduct` and the product of the current element and the `minProduct`. We will store this maximum in the `maxProduct` variable. Then we will find the minimum of the current element, the product of the current element and the `maxProduct` and the product of the current element and the `minProduct`. We will store this minimum in the `minProduct` variable. Then we will find the maximum of the `maxProduct` and the `ans` and store it in the `ans` variable. Before updating min and max, we will check if the current iterating element is negative, if it is then we will swap the `maxProduct` and `minProduct` variables. Time=O(n) Space=O(1)
