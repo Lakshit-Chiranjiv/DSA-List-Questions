@@ -1,6 +1,7 @@
 package Striver.Recursion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class q17 {
@@ -9,6 +10,7 @@ public class q17 {
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3 };
         List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(arr);
         allSubsets(arr, 0, new ArrayList<>(), ans);
     }
 
