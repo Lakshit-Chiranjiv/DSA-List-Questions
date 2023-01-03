@@ -1,3 +1,5 @@
+package Aman_Bhaiya_DSA_List.Arrays;
+
 import java.util.ArrayList;
 
 public class LQ22 {

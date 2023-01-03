@@ -1,3 +1,5 @@
+package Aman_Bhaiya_DSA_List.Arrays;
+
 public class LQ25 {
 
     //Time Complexity: O(logn)

@@ -1,3 +1,5 @@
+package Aman_Bhaiya_DSA_List.Arrays;
+
 public class LQ23 {
     public int[] productExceptSelf(int[] nums) {
         int out[] = new int[nums.length];

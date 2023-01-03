@@ -1,3 +1,5 @@
+package Aman_Bhaiya_DSA_List.Arrays;
+
 public class LQ24 {
     public int maxProduct(int[] nums) {
         int mx = nums[0];
