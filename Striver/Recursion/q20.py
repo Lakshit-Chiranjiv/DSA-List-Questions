@@ -1,4 +1,4 @@
-# n-queen - bacltracking
+# n-queen - backtracking
 
 def nQueen(arr,col):
     if col >= len(arr):
