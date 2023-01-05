@@ -2,8 +2,6 @@ package Aman_Bhaiya_DSA_List.Arrays;
 
 public class LQ32 {
 
-    // minimum merge operations to make an array palindrome
-
     public static void main(String[] args) {
         int[] arr = {1, 4, 5, 9, 1};
         int n = arr.length;
