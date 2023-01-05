@@ -33,4 +33,25 @@ public class LQ31 {
             System.out.println(top[0]+" "+top[1]);
         }
     }
+
+    // in-place solution
+    public static void mergeIntervals(int[][] arr, int n){
+        //sorting array based on start time
+        Arrays.sort(arr, (a,b)->a[0]-b[0]);
+
+        int index = 0;
+        for(int i=1;i<n;i++){
+            if(arr[index][1]<arr[i][0]){
+                index++;
+                arr[index][0] = arr[i][0];
+                arr[index][1] = arr[i][1];
+            }
+            else if(arr[index][1]<arr[i][1]){
+                arr[index][1] = arr[i][1];
+            }
+        }
+        for(int i=0;i<=index;i++){
+            System.out.println(arr[i][0]+" "+arr[i][1]);
+        }
+    }
 }
