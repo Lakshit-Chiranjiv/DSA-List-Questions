@@ -5,7 +5,6 @@ import java.util.List;
 
 public class q26 {
     // kth permutation sequence for a set of n numbers
-
     public static void main(String[] args) {
         int n = 3;
         int k = 3;
