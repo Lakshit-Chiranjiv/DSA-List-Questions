@@ -123,3 +123,9 @@ The intuition behind this is that the water trapped at any index will be the min
 
 - Same as LQ26
 
+
+
+# *Kth Smallest Element - LQ30*
+
+- We will sort the array and return the k-1th element. Time=O(nlogn) Space=O(1)
+- We will create a priority queue and add all the elements of the array to it. Then we will traverse the array from 0 to k-1 and in each iteration we will pop the top element from the priority queue. Then we will return the top element of the priority queue. Time=O(nlogn) Space=O(n)
