@@ -116,3 +116,10 @@ The intuition behind this is that the water trapped at any index will be the min
 # *Container With Most Water - LQ28*
 
 - We will set two pointers `left` and `right` and initialize them with 0 and n-1 respectively. Then we will traverse the array until the left pointer is less than the right pointer. In each iteration we will find the minimum of the height of the elements at the left and right pointer and multiply it with the difference between the left and right pointer. Then we will update the `ans` variable with the maximum of the `ans` and the product found in the previous step. Then we will check if the height of the element at the left pointer is less than the height of the element at the right pointer. If it is then we will update the left pointer to `left+1`. If it is not then we will update the right pointer to `right-1`. Time=O(n) Space=O(1)
+
+
+
+# *Given Sum Pair - LQ29*
+
+- Same as LQ26
+
