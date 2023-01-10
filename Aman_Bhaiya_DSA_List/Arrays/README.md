@@ -129,3 +129,11 @@ The intuition behind this is that the water trapped at any index will be the min
 
 - We will sort the array and return the k-1th element. Time=O(nlogn) Space=O(1)
 - We will create a priority queue and add all the elements of the array to it. Then we will traverse the array from 0 to k-1 and in each iteration we will pop the top element from the priority queue. Then we will return the top element of the priority queue. Time=O(nlogn) Space=O(n)
+
+
+
+# *Merge overlapping intervals - LQ31*
+
+- First we will sort the intervals array based on the start time. Then we will create a stack and add the first interval to it. Then we will traverse the array from 1 to n-1 and in each iteration we will check if the end time of the top element of the stack is greater than the start time of the current interval. If it is then we will update the end time of the top element of the stack to the maximum of the end time of the top element of the stack and the end time of the current interval. If it is not then we will add the current interval to the stack. Then we will create a new array and add all the elements of the stack to it. Then we will return the new array. Time=O(nlogn) Space=O(n)
+
+- There is also an inplace solution where after sorting the intervals array based on start time, we will traverse the array and keep checking the two intervals. If the end time of the first interval is greater than the start time of the second interval then we will update the end time of the first interval to the maximum of the end time of the first interval and the end time of the second interval. If it is not then we will update the start time of the second interval to the start time of the first interval and the end time of the second interval to the end time of the first interval. Then we will return the array. Time=O(nlogn) Space=O(1)
