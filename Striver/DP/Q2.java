@@ -3,7 +3,7 @@ package Striver.DP;
 class Q2{
     // climbing stairs problem
 
-    //recursive solution
+    //recursive solution - Time: O(2^n) Space: O(n)
     public static int climbStairs(int n) {
         if(n==0 || n==1){
             return 1;
@@ -11,7 +11,7 @@ class Q2{
         return climbStairs(n-1) + climbStairs(n-2);
     }
 
-    //memoization
+    //memoization - Time: O(n) Space: O(n)
     public static int climbStairs_memo(int n, int[] dp) {
         if(n==0 || n==1){
             return 1;
@@ -23,7 +23,7 @@ class Q2{
         return dp[n];
     }
 
-    //tabulation
+    //tabulation - Time: O(n) Space: O(n)
     public static int climbStairs_tab(int n) {
         int[] dp = new int[n+1];
         dp[0] = 1;
@@ -34,7 +34,7 @@ class Q2{
         return dp[n];
     }
 
-    //space optimization
+    //space optimization - Time: O(n) Space: O(1)
     public static int climbStairs_opt(int n) {
         if(n==0 || n==1){
             return 1;
@@ -47,7 +47,7 @@ class Q2{
             a = b;
             b = c;
         }
-        return c;
+        return b;
     }
 
     public static void main(String[] args) {
