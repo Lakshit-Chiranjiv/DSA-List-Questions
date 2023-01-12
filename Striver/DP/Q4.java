@@ -68,4 +68,17 @@ public class Q4 {
         }
         return dp[n%k];
     }
+
+    public static void main(String[] args) {
+        int n = 5;
+        int k = 3;
+        int[] cost = {0, 10, 30, 40, 50, 60};
+        int[] dp = new int[n+1];
+        for(int i = 0;i<=n;i++)
+            dp[i] = -1;
+        System.out.println(frogJump(n, k, cost));
+        System.out.println(frogJumpMemo(n, k, cost, dp));
+        System.out.println(frogJumpTab(n, k, cost));
+        System.out.println(frogJumpTabOpt(n, k, cost));
+    }
 }
