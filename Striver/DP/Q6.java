@@ -60,6 +60,8 @@ public class Q6 {
     }
 
     public static int maxSumCyclic(int[] arr, int n){
+        if (n == 1) 
+            return arr[0];
         int[] arr1 = new int[n-1];
         int[] arr2 = new int[n-1];
         for(int i = 0;i<n-1;i++){
