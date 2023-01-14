@@ -48,12 +48,13 @@ public class Q5 {
         int a = arr[0];
         int b = 0;
         for(int i = 1;i<=n;i++){
-            int pick = 0;
-            if(i-2 >= 0)
-                pick = a + arr[i];
+            int pick = arr[i];
+            if(i > 1)
+                pick += a;
             int notPick = b;
-            b = Math.max(pick, notPick);
+            int c = Math.max(pick, notPick);
             a = b;
+            b = c;
         }
         return b;
     }
