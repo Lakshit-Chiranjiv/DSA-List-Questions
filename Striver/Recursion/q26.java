@@ -26,5 +26,7 @@ public class q26 {
             k = k % fact;
             fact = fact / nums.size();
         }
+
+        System.out.println(ans);
     }
 }
