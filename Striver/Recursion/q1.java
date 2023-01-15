@@ -8,6 +8,7 @@ class q1 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         print(1,n);
+        sc.close();
     }
 
     static void print(int i, int n) {
