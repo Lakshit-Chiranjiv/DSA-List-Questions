@@ -21,27 +21,41 @@ public class Q8 {
 
     // tabulation - Time: O(m*n) Space: O(m*n)
     public static int countPathsTab(int m, int n) {
-        int[][] dp = new int[m + 1][n + 1];
-        for (int i = 0; i <= m; i++) {
-            for (int j = 0; j <= n; j++) {
+        int[][] dp = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if (i == 0 || j == 0) dp[i][j] = 1;
-                else if (i < 0 || j < 0) dp[i][j] = 0;
-                else dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+                else if(i > 0 && j > 0) dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
             }
         }
-        return dp[m][n];
+        return dp[m-1][n-1];
     }
 
     // space optimization - Time: O(m*n) Space: O(n)
     public static int countPathsSpaceOpt(int m, int n) {
-        int[] dp = new int[n + 1];
-        for (int i = 0; i <= m; i++) {
-            for (int j = 0; j <= n; j++) {
-                if (i == 0 || j == 0) dp[j] = 1;
-                else if (i < 0 || j < 0) dp[j] = 0;
-                else dp[j] = dp[j] + dp[j - 1];
+        int[] dp = new int[n];
+        for (int i = 0; i < m; i++) {
+            int[] temp = new int[n];
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || j == 0) temp[j] = 1;
+                else if(i > 0 && j > 0) temp[j] = dp[j] + temp[j - 1];
+            }
+            dp = temp;
+        }
+        return dp[n-1];
+    }
+
+    public static void main(String[] args) {
+        int m = 3, n = 3;
+        System.out.println(countPaths(m-1, n-1));
+        int[][] dp = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                dp[i][j] = -1;
             }
         }
-        return dp[n];
+        System.out.println(countPathsMemo(m-1, n-1, dp));
+        System.out.println(countPathsTab(m, n));
+        System.out.println(countPathsSpaceOpt(m, n));
     }
 }
