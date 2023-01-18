@@ -60,6 +60,6 @@ public class Q10{
         }
         System.out.println(minCostPathMemo(grid, n-1, m-1, dp));
         System.out.println(minCostPathTab(grid, n, m));
-        System.out.println(minCostPathSpaceOpt(grid, m, n));
+        System.out.println(minCostPathSpaceOpt(grid, n, m));
     }
 }
