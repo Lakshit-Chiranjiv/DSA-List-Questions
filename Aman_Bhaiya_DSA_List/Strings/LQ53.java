@@ -22,7 +22,7 @@ public class LQ53 {
                     if (str.charAt(i) == str.charAt(j)) {
                         dp[i][j] = (dp[i][j - 1] + dp[i + 1][j] + 1) % mod;
                     } else {
-                        dp[i][j] = (dp[i][j - 1] + dp[i + 1][j] - dp[i + 1][j - 1]) % mod;
+                        dp[i][j] = (dp[i][j - 1] + dp[i + 1][j] - dp[i + 1][j - 1] + mod) % mod;
                     }
                 }
             }
