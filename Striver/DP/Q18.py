@@ -118,3 +118,12 @@ def countPartitionTabOpt(arr, diff, n):
 
     target = (totalSum - diff) // 2
     return countSubsetSumTabOpt(arr, target, n)
+
+
+arr = [1, 1, 2, 3]
+diff = 1
+n = len(arr)
+print(countPartition(arr, diff, n))
+print(countPartitionMemo(arr, diff, n))
+print(countPartitionTab(arr, diff, n))
+print(countPartitionTabOpt(arr, diff, n))
