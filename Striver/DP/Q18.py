@@ -1,7 +1,5 @@
 # count partition with given difference
 
-# Count number of subsets which sum to target
-
 # recursive solution
 def countSubsetSum(arr, target, n):
     if target == 0:
