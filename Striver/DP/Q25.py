@@ -30,7 +30,7 @@ def lcsMem(s1, s2, idx1, idx2, dp):
 def lcsTab(s1, s2):
     n = len(s1)
     m = len(s2)
-    dp = [[0] * (n+1) for _ in range(m+1)]
+    dp = [[0] * (m+1) for _ in range(n+1)]
 
     for i in range(0,m):
         dp[0][i] = 0
@@ -70,7 +70,7 @@ def lcsTabOpt(s1, s2):
 
 
 s1 = "abcdgh"
-s2 = "aedfhr"
+s2 = "aedfh"
 print(lcs(s1, s2, len(s1)-1, len(s2)-1))
 dp = [[-1] * (len(s2)+1) for _ in range(len(s1)+1)]
 print(lcsMem(s1, s2, len(s1)-1, len(s2)-1, dp))
