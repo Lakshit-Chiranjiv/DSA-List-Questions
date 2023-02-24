@@ -105,7 +105,9 @@ public class Q33 {
                     curr[j] = 1 + Math.min(insert, Math.min(delete, replace));
                 }
             }
-            dp = curr;
+            for(int j=0; j<=m; j++){
+                dp[j] = curr[j];
+            }
         }
         return dp[m];
     }
