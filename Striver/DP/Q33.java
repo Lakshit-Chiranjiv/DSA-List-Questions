@@ -105,6 +105,7 @@ public class Q33 {
                     curr[j] = 1 + Math.min(insert, Math.min(delete, replace));
                 }
             }
+            dp = curr;
         }
         return dp[m];
     }
