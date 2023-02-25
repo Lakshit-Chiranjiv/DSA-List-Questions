@@ -61,10 +61,10 @@ public class Q34{
         }
 
         for(int i = 1; i <= n; i++){
-            boolean flag = false;
+            boolean flag = true;
             for(int k = 1; k <= i; k++){
-                if(s.charAt(k-1) == '*'){
-                    flag = true;
+                if(s.charAt(k-1) != '*'){
+                    flag = false;
                     break;
                 }
             }
@@ -93,10 +93,10 @@ public class Q34{
         }
 
         for(int i = 1; i <= n; i++){
-            boolean flag = false;
+            boolean flag = true;
             for(int k = 1; k <= i; k++){
                 if(s.charAt(k-1) == '*'){
-                    flag = true;
+                    flag = false;
                     break;
                 }
             }
