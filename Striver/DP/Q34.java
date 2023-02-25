@@ -16,8 +16,8 @@ public class Q34{
             return true;
         }
 
-        if(s.charAt(i) == p.charAt(j) || p.charAt(j) == '?') return isMatch(s, p, i-1, j-1);
-        if(p.charAt(j) == '*'){
+        if(s.charAt(i) == p.charAt(j) || s.charAt(i) == '?') return isMatch(s, p, i-1, j-1);
+        if(s.charAt(i) == '*'){
             return isMatch(s, p, i-1, j) || isMatch(s, p, i, j-1);
         }
 
@@ -37,12 +37,12 @@ public class Q34{
 
         if(dp[i][j] != -1) return dp[i][j] == 1;
 
-        if(s.charAt(i) == p.charAt(j) || p.charAt(j) == '?'){
+        if(s.charAt(i) == p.charAt(j) || s.charAt(i) == '?'){
             
             dp[i][j] = isMatchMem(s, p, i-1, j-1, dp) ? 1 : 0;
             return dp[i][j] == 1;
         } 
-        if(p.charAt(j) == '*'){
+        if(s.charAt(i) == '*'){
             dp[i][j] = (isMatchMem(s, p, i-1, j, dp) || isMatchMem(s, p, i, j-1, dp)) ? 1 : 0;
             return dp[i][j] == 1;
         }
@@ -73,8 +73,8 @@ public class Q34{
 
         for(int i = 1; i <= n; i++){
             for(int j = 1; j <= m; j++){
-                if(s.charAt(i-1) == p.charAt(j-1) || p.charAt(j-1) == '?') dp[i][j] = dp[i-1][j-1];
-                else if(p.charAt(j-1) == '*') dp[i][j] = dp[i-1][j] || dp[i][j-1];
+                if(s.charAt(i-1) == p.charAt(j-1) || s.charAt(i-1) == '?') dp[i][j] = dp[i-1][j-1];
+                else if(s.charAt(i-1) == '*') dp[i][j] = dp[i-1][j] || dp[i][j-1];
                 else dp[i][j] = false;
             }
         }
@@ -102,8 +102,8 @@ public class Q34{
             }
             curr[0] = flag;
             for(int j = 1; j <= m; j++){
-                if(s.charAt(i-1) == p.charAt(j-1) || p.charAt(j-1) == '?') curr[j] = dp[j-1];
-                else if(p.charAt(j-1) == '*') curr[j] = dp[j] || curr[j-1];
+                if(s.charAt(i-1) == p.charAt(j-1) || s.charAt(i-1) == '?') curr[j] = dp[j-1];
+                else if(s.charAt(i-1) == '*') curr[j] = dp[j] || curr[j-1];
                 else curr[j] = false;
             }
             for(int j = 0; j <= m; j++){
@@ -116,8 +116,8 @@ public class Q34{
 
     public static void main(String[] args) {
         Q34 q = new Q34();
-        String s = "baaabab";
-        String p = "*****ba*****ab";
+        String s = "ba*****ab";
+        String p = "baxnab";
         System.out.println(q.isMatch(s, p, s.length()-1, p.length()-1));
         int[][] dp = new int[s.length()][p.length()];
         for(int i = 0; i < s.length(); i++){
