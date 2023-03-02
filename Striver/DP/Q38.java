@@ -106,10 +106,10 @@ public class Q38{
         int[] prices = {3,3,5,0,0,3,1,4};
         int k = 4;
         System.out.println(obj.maxProfit(prices, 0, 1, k));
-        int[][][] dp = new int[prices.length][2][3];
+        int[][][] dp = new int[prices.length][2][k+1];
         for(int i = 0; i < prices.length; i++)
             for(int j = 0; j < 2; j++)
-                for(int z = 0; z < 3; z++)
+                for(int z = 0; z <= k; z++)
                     dp[i][j][z] = -1;
         System.out.println(obj.maxProfitMem(prices, 0, 1, k, dp));
         System.out.println(obj.maxProfitTab(prices, k));
