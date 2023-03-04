@@ -31,3 +31,4 @@ class Solution:
             wind_right += 1
 
         return ans
+
