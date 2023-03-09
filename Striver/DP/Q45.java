@@ -9,6 +9,8 @@ public class Q45 {
         int n = words.length;
         int[] dp = new int[n];
         Arrays.fill(dp, 1);
+        // sort the array based on the length of the string
+        Arrays.sort(words, (a, b) -> a.length() - b.length());
         int max = 1;
         for(int i = 1; i < n; i++){
             for(int j = 0; j < i; j++){
