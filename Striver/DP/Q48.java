@@ -17,12 +17,12 @@ public class Q48{
     }
 
     // memoization - Time: O(n^3) | Space: O(n^2)
-    public static int solve(int[] arr, int i, int j, int[][] dp){
+    public static int solveMem(int[] arr, int i, int j, int[][] dp){
         if(i == j) return 0;
         if(dp[i][j] != -1) return dp[i][j];
         int min = Integer.MAX_VALUE;
         for(int k = i; k < j; k++){
-            int steps = solve(arr, i, k, dp) + solve(arr, k+1, j, dp) + arr[i-1]*arr[k]*arr[j];
+            int steps = solveMem(arr, i, k, dp) + solveMem(arr, k+1, j, dp) + arr[i-1]*arr[k]*arr[j];
             min = Math.min(min, steps);
         }
         return dp[i][j] = min;
@@ -34,6 +34,6 @@ public class Q48{
         System.out.println(solve(arr, 1, n-1));
         int[][] dp = new int[n][n];
         for(int[] row: dp) Arrays.fill(row, -1);
-        System.out.println(solve(arr, 1, n-1, dp));
+        System.out.println(solveMem(arr, 1, n-1, dp));
     }
 }
