@@ -1,5 +1,7 @@
 package Striver.DP;
 
+import java.util.Arrays;
+
 public class Q50{
     // Minimum Cost to Cut the Stick
 
@@ -58,7 +60,7 @@ public class Q50{
         for(int i = 1; i <= c; i++){
             arr2[i] = arr[i-1];
         }
-
+        Arrays.sort(arr2);
         System.out.println(minCost(arr2, 1, c));
         System.out.println(minCostMemo(arr2, 1, c, new int[c+2][c+2]));
         System.out.println(minCostTab(arr2, n));
