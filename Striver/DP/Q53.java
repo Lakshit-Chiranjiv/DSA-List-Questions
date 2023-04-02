@@ -67,10 +67,10 @@ public class Q53 {
     public static void main(String[] args) {
         Q53 q = new Q53();
         String s = "aab";
-        System.out.println(q.minCut(s, 0));
+        System.out.println(q.minCut(s, 0) - 1);
         int[] dp = new int[s.length()];
         for (int i = 0; i < s.length(); i++) dp[i] = -1;
-        System.out.println(q.minCutMem(s, 0, dp));
+        System.out.println(q.minCutMem(s, 0, dp) - 1);
         System.out.println(q.minCutTab(s));
     }
 }
