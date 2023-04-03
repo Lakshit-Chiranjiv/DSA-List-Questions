@@ -40,7 +40,7 @@ def maxSumMemo(i,arr,k,dp):
 # tabulation solution
 def maxSumTab(arr,k):
     n = len(arr)
-    dp = [[0 for i in range(n+1)] for j in range(n+1)]
+    dp = [0 for i in range(n+1)]
 
     for i in range(n-1,-1,-1):
         maxSum = float('-inf')
@@ -50,11 +50,11 @@ def maxSumTab(arr,k):
         for j in range(i,min(i+k,n)):
             maxVal = max(maxVal,arr[j])
             length += 1
-            maxSum = max(maxSum,maxVal*length + dp[j+1][k])
+            maxSum = max(maxSum,maxVal*length + dp[j+1])
 
-        dp[i][k] = maxSum
+        dp[i] = maxSum
 
-    return dp[0][k]
+    return dp[0]
 
 arr = [1,15,7,9,2,5,10]
 k = 3
