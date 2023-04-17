@@ -20,3 +20,7 @@ class Solution:
 # 3. Create a for loop which iterates over the candies array and in each iteration, we check if the current element + extraCandies >= mx.
 # 4. If yes, append True to the ans array else append False to the ans array.
 # 5. Return the ans array.
+
+# time complexity: O(n) where n is the length of the candies array as we iterate over the candies array once.
+# space complexity: O(n) where n is the length of the candies array as we create an ans array of size n. If we don't consider the space taken by the ans array, then the space complexity is O(1) as we don't use any extra space.
+
