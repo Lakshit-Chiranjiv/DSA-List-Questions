@@ -28,7 +28,6 @@ public class Q08 {
         if (root == null) return ans;
 
         Stack<Node> st = new Stack<>();
-        st.push(root);
         Node curr = root;
 
         while (curr != null || !st.isEmpty()) {
