@@ -7,8 +7,8 @@ def maxPathSum(root, res):
         return 0
     l = maxPathSum(root.left, res)
     r = maxPathSum(root.right, res)
-    temp = max(max(l, r) + root.val, root.val)
-    ans = max(temp, l + r + root.val)
+    temp = max(max(l, r) + root.data, root.data)
+    ans = max(temp, l + r + root.data)
     res[0] = max(res[0], ans)
     return temp
 
