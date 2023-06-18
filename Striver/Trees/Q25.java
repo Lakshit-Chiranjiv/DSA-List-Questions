@@ -15,7 +15,7 @@ public class Q25{
         if (child > root.data) root.data = child;
         else {
             if (root.left != null) root.left.data = root.data;
-            else root.right.data = root.data;
+            else if (root.right != null) root.right.data = root.data;
         }
 
         ChildrenSumProperty(root.left);
