@@ -1,8 +1,20 @@
 class Solution:
-    def findArray(self, pref: List[int]) -> List[int]:
-        n = len(pref)
-        arr = [0]*n
-        arr[0] = pref[0]
-        for i in range(1,n):
-            arr[i] = pref[i]^pref[i-1]
-        return arr
+    def findMode(self, root: Optional[TreeNode]) -> List[int]:
+        def dfs(node, counter):
+            if not node:
+                return
+            
+            counter[node.val] += 1
+            dfs(node.left, counter)
+            dfs(node.right, counter)
+            
+        counter = defaultdict(int)
+        dfs(root, counter)
+        max_freq = max(counter.values())
+        
+        ans = []
+        for key in counter:
+            if counter[key] == max_freq:
+                ans.append(key)
+        
+        return ans
