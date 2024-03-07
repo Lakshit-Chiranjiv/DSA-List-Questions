@@ -24,3 +24,9 @@ class Solution:
             return x
         else:
             return x.next
+        
+# 876. Middle of the Linked List
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+        
+# We maintain two pointers, x and y. The x pointer moves one step at a time and the y pointer moves two steps at a time. The x pointer will be at the middle of the list when the y pointer reaches the end of the list. If the length of the list is even, the x pointer will be at the first middle node. If the length of the list is odd, the x pointer will be at the second middle node.
